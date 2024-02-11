@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Image Concepts Example</title>
+</head>
+<body>
+
+<h1>Advanced Image Concepts Example</h1>
+
+<!-- Color Depth and Dithering Example -->
+<p>Color Depth and Dithering:</p>
+<img src="example_image.gif" alt="Dithered Image" width="300" height="200">
+
+<!-- Image Size Example with PHP Server-Side Processing -->
+<p>Dynamic Image Size (Server-Side Processing):</p>
+<?php
+  // PHP code for server-side image processing (resize)
+  $imageName = 'large_image.jpg';
+  $width = isset($_GET['width']) ? intval($_GET['width']) : 600;
+  $height = isset($_GET['height']) ? intval($_GET['height']) : 400;
+  $imagePath = "images/$imageName";
+  $resizedImagePath = "images/resized_$width" . "x$height" . "_$imageName";
+
+  if (!file_exists($resizedImagePath)) {
+    // Resize image if the resized version doesn't exist
+    $originalImage = imagecreatefromjpeg($imagePath);
+    $resizedImage = imagescale($originalImage, $width, $height);
+    imagejpeg($resizedImage, $resizedImagePath);
+    imagedestroy($originalImage);
+    imagedestroy($resizedImage);
+  }
+
+  echo "<img src=\"$resizedImagePath\" alt=\"Dynamic Resized Image\" width=\"$width\" height=\"$height\">";
+?>
+<p>Adjust image size dynamically using URL parameters: <code>?width=400&amp;height=300</code></p>
+
+<!-- Interpolating Example -->
+<p>Interpolating:</p>
+<img src="low_res_image.jpg" alt="Low-Resolution Image" width="300" height="200" style="image-rendering: pixelated;">
+
+<!-- Display Resolution Example -->
+<p>Display Resolution:</p>
+<img src="high_res_image.jpg" alt="High-Resolution Image" width="1200" height="800">
+
+</body>
+</html>

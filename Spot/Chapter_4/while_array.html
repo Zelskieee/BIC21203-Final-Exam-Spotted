@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Intake</title>
+</head>
+<body>
+
+<script>
+    // Define the food intake for two days using a multidimensional array
+    var foodIntake = {
+        "Monday": {
+            "Lettuce": 36,
+            "Mushroom": 96,
+            "Rice": 100
+        },
+        "Tuesday": {
+            "Chicken": 200,
+            "Noodle": 300,
+            "Egg": 100
+        }
+    };
+
+    // Display the food intake for each day using while loops
+    var days = Object.keys(foodIntake);
+    var numDays = days.length;
+
+    var i = 0;
+    while (i < numDays) {
+        var day = days[i];
+        document.write("Food intake for " + day + " are :<br><br>");
+
+        var foods = foodIntake[day];
+        var foodKeys = Object.keys(foods);
+        var numFoods = foodKeys.length;
+
+        var j = 0;
+        while (j < numFoods) {
+            var food = foodKeys[j];
+            var gram = foods[food];
+            document.write(food + ": " + gram + " gram<br>");
+            j++;
+        }
+
+        document.write("<br>");
+        i++;
+    }
+</script>
+
+</body>
+</html>

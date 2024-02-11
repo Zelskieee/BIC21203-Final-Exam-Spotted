@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Basics</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        .highlight {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <p id="myParagraph">Click me to see effects!</p>
+    <button id="myButton">Change Color</button>
+
+    <script>
+        $(document).ready(function() {
+            // Selector and Event
+            $('#myParagraph').click(function() {
+                // Effect: Hide, then show with animation
+                $(this).hide(500).show(500);
+
+                // Traversing: Find the parent, change background color
+                $(this).parent().css('background-color', 'lightgray');
+            });
+
+            // Selector and Event
+            $('#myButton').click(function() {
+                // Effect: Fade out, then fade in
+                $('#myParagraph').fadeOut(500).fadeIn(500);
+
+                // Traversing: Get siblings and change text color
+                $(this).siblings().css('color', 'blue');
+            });
+        });
+    </script>
+</body>
+</html>

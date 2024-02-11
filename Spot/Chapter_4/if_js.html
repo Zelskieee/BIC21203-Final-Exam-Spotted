@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driving Qualification Checker</title>
+</head>
+<body>
+
+    <h1>Driving Qualification Checker</h1>
+
+    <label for="ageInput">Enter age:</label>
+    <input type="number" id="ageInput" placeholder="Enter age">
+
+    <button onclick="checkDrivingQualification()">Check</button>
+
+    <script>
+        // JavaScript code
+        function checkDrivingQualification() {
+            var age = document.getElementById("ageInput").value;
+
+            if (age > 18) {
+                // Qualifies for driving
+                document.write("<b>Qualifies for driving</b>");
+            } else {
+                // Does not qualify for driving
+                document.write("<b>Does not qualify for driving</b>");
+            }
+        }
+    </script>
+
+</body>
+</html>

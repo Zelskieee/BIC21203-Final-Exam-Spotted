@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Intake</title>
+</head>
+<body>
+
+<script>
+    // Define the food intake for two days using a multidimensional array
+    var foodIntake = {
+        "Monday": {
+            "Lettuce": 36,
+            "Mushroom": 96,
+            "Rice": 100
+        },
+        "Tuesday": {
+            "Chicken": 200,
+            "Noodle": 300,
+            "Egg": 100
+        }
+    };
+
+    // Display the food intake for each day using forEach loop
+    Object.entries(foodIntake).forEach(([day, foods]) => {
+        document.write(`Food intake for ${day} are :<br><br>`);
+
+        Object.entries(foods).forEach(([food, gram]) => {
+            document.write(`${food}: ${gram} gram<br>`);
+        });
+
+        document.write("<br>");
+    });
+</script>
+
+</body>
+</html>

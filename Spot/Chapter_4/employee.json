@@ -1,0 +1,25 @@
+{
+    "employees": [
+      {
+        "employeeID": 12345,
+        "name": "John Doe",
+        "department": "Development",
+        "position": "Team Leader",
+        "salary": 75000,
+        "address": "123 Maple Street",
+        "city": "Springfield",
+        "country": "USA"
+      },
+      {
+        "employeeID": 67890,
+        "name": "Jane Smith",
+        "department": "Marketing",
+        "position": "Brand Manager",
+        "salary": 85000,
+        "address": "456 Oak Avenue",
+        "city": "Greenfield",
+        "country": "USA"
+      }
+    ]
+  }
+  
